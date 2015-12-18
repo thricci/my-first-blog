@@ -1,16 +1,12 @@
-<html>
-    <head>
-        <title>Thamy</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="">The first Blog</a></h1>
-        </div>
+<div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
 
-        <div>
-            <p>published: 18.12.2015, 14:10</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Hans Solo é pai do Kylo Ren. E provavelmente da Rey também.</p>
-        </div>
-    </body>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaks }}</p>
+    </div>
+{% endfor %}
 </html>

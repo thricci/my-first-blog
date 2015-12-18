@@ -6,11 +6,13 @@
         <div>
             <h1><a href="">The first Blog</a></h1>
         </div>
+{% for post in posts %}
 
         <div>
-            <p>published: 18.12.2015, 14:10</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Hans Solo é pai do Kylo Ren. E provavelmente da Rey também.</p>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaks }}</p>
         </div>
+{% endfor %}
     </body>
 </html>
